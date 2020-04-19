@@ -1,0 +1,31 @@
+{% extends 'flask_statics_helper/macros.html' %}
+{%- block html_html -%}
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    {% block html_head -%}
+
+    {% block html_meta -%}
+    <meta charset="UTF-8">
+    {%- endblock html_meta %}
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    {%- block styles -%}
+    {{ flask_statics_helper_render_resources('css') }}
+    {%- endblock styles -%}
+
+    {%- endblock html_head %}
+</head>
+
+<body>
+    {% block html_body %}
+    {% endblock html_body %}
+
+    {% block scripts -%}
+    {{ flask_statics_helper_render_resources('js') }}
+    {%- endblock scripts %}
+</body>
+</html>
+{%- endblock html_html %}
