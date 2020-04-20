@@ -1,7 +1,10 @@
 package org.nuc.app;
 
 import android.app.Application;
+import android.util.Log;
 
+import org.nuc.app.config.ConfigKeys;
+import org.nuc.app.config.Configurator;
 import org.nuc.app.config.InitConfig;
 
 public class App extends Application {

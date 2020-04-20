@@ -1,8 +1,8 @@
 package org.nuc.app.net;
 
 
-import org.nuc.net.config.ConfigKeys;
-import org.nuc.net.config.InitConfig;
+import org.nuc.app.config.ConfigKeys;
+import org.nuc.app.config.InitConfig;
 
 import java.util.WeakHashMap;
 import java.util.concurrent.TimeUnit;
@@ -12,17 +12,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public final class RestCreator {
-
-    /**
-     * 参数容器
-     */
-    private static final class ParamsHolder {
-        private static final WeakHashMap<String, Object> PARAMS = new WeakHashMap<>();
-    }
-
-    public static WeakHashMap<String, Object> getParams() {
-        return ParamsHolder.PARAMS;
-    }
 
     /**
      * 构建OkHttp
