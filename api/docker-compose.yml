@@ -1,0 +1,24 @@
+version: '1.0'
+
+services:
+  web:
+    build: .
+    ports:
+      - 9000:9000
+    depends_on:
+      - db
+      - nginx
+      - redis
+  db:
+    image: mysql:5.7
+  nginx:
+    image: nginx:1.17
+  redis:
+    image: redis:5.0.8
+
+# 可选
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#      - 8080:8080
