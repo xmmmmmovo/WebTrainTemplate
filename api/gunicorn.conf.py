@@ -1,3 +1,6 @@
-workers = 10
+import multiprocessing
+
+workers = multiprocessing.cpu_count() * 2 + 1
 worker_class = "gevent"
 bind = "0.0.0.0:8888"
+errorlog = './log/gunicorn.log'
