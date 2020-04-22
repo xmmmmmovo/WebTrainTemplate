@@ -2,7 +2,7 @@ from model.post import Post
 from db.post_dao import select_post_by_id, select_posts, insert_post, update_post, delete_post_by_id
 
 
-def get_post(id: int):
+def get_post_service(id: int):
     res = select_post_by_id(id)
     return res if res is None else Post(id,
                                         res['author'],
@@ -13,7 +13,7 @@ def get_post(id: int):
                                         )
 
 
-def get_posts():
+def get_posts_service():
     res = select_posts()
     return res if res is None else [Post(r['id'],
                                          r['author'],
@@ -24,15 +24,15 @@ def get_posts():
                                          ) for r in res]
 
 
-def add_post(post: Post):
+def add_post_service(post: Post):
     res, id = insert_post(post)
     return res, id
 
 
-def update_post__(post: Post):
+def update_post_service(post: Post):
     res = update_post(post)
     return res
 
 
-def delete_post(id: int):
+def delete_post_service(id: int):
     return delete_post_by_id(id)
