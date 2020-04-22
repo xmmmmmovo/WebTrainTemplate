@@ -8,7 +8,7 @@ services:
       - ../logs:/log
     depends_on:
       - db
-  #      - redis
+      - redis
   db:
     image: mysql:5.7
     environment:
@@ -18,13 +18,15 @@ services:
   nginx:
     image: nginx:1.17
     volumes:
-      - ./config/nginx:/etc/nginx/conf.d
+      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - web
     ports:
       - 8888:80
-#  redis:
-#    image: redis:5.0.8
+  redis:
+    image: redis:5.0.8
+    volumes:
+    - ./config/redis:/etc/redis/redis.conf
 
 # 可选
 #  adminer:

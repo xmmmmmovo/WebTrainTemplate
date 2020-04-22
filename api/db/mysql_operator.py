@@ -9,8 +9,8 @@ class MysqlOp:
     conn = None
     cur = None
 
-    def __init__(self, host='db', port=3306, user='root',
-                 password='mx/58MFuLJ6^%.q', db='test', charset='utf8'):
+    def __init__(self, host='119.3.166.63', port=3306, user='root',
+                 password='123456', db='test', charset='utf8'):
         try:
             self.conn = pymysql.connect(
                 host=host, port=port, user=user,
