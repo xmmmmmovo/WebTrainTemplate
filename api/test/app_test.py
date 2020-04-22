@@ -11,6 +11,7 @@ headers = {
 
 class MyTestCase(unittest.TestCase):
     def test_post_user(self):
+        d = {}
         res = r.post(f'{BASE_URL}/user', headers=headers,
                      data=json.dumps(
                          {
