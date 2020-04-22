@@ -1,4 +1,5 @@
-
+create database test;
+use test;
 create table post
 (
     id          bigint auto_increment
